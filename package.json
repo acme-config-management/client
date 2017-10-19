@@ -13,7 +13,8 @@
   "keywords": [
     "express",
     "node",
-    "client"
+    "client",
+    "ejs"
   ],
   "author": "fmenkes",
   "license": "MIT",
@@ -22,6 +23,8 @@
   },
   "homepage": "https://github.com/acme-config-management/client#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   }
 }
