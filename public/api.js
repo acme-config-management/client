@@ -1,13 +1,9 @@
-function getJSON(gatewayURI) {
-  fetch(gatewayURI)
+function getJSON() {
+  fetch('/getJSON')
     .then(function(response) {
-      return response.json();
-    })
-    .then(function(response) {
-      document.getElementById('info').innerHTML = JSON.stringify(response, null, 2);
+      document.getElementById('info').innerHTML = response;
     })
     .catch(function(error) {
-      console.log(error)
-      document.getElementById('info').innerHTML = "error";
+      document.getElementById('info').innerHTML = 'error: ' + error;
     });
 }

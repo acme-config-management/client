@@ -14,6 +14,20 @@ app.get('/', function(req, res) {
   res.render('index', { gatewayURI: gatewayURI });
 });
 
+app.get('/getJSON', function(req, res) {
+  return fetch(gatewayURI)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      return res.send(JSON.stringify(response, null, 2));
+    })
+    .catch(function(error) {
+      console.log(error);
+      return res.send(error);
+    });
+})
+
 app.listen(port, function () {
   console.log('Client listening on port ' + port);
 });
