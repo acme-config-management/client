@@ -21,7 +21,7 @@ app.get('/getJSON', function(req, res) {
       return response.json();
     })
     .then(function(response) {
-      return res.send(JSON.stringify(response, null, 2));
+      return res.send(response);
     })
     .catch(function(error) {
       console.log(error);
